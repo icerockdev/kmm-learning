@@ -8,10 +8,24 @@ subprojects {
         extensions.configure<com.android.build.gradle.BaseExtension> {
             compileSdkVersion(31)
             sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+
             defaultConfig {
                 minSdkVersion(21)
                 targetSdkVersion(31)
             }
+
+            with(buildFeatures) {
+                buildConfig = false
+                aidl = false
+                compose = false
+                prefab = false
+                renderScript = false
+                resValues = false
+                shaders = false
+                viewBinding = false
+            }
         }
+
+        tasks.matching { it.name.startsWith("lint") }.configureEach { this.enabled = false }
     }
 }

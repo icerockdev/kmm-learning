@@ -6,21 +6,18 @@ plugins {
 kotlin {
     android()
     ios()
+}
 
-    sourceSets {
-        val commonMain by getting
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-            }
-        }
-        val androidMain by getting
-        val androidTest by getting {
-            dependencies {
-                implementation("junit:junit:4.13")
-            }
-        }
-        val iosMain by getting
-        val iosTest by getting
-    }
+dependencies {
+    commonMainImplementation(libs.coroutinesCore)
+    commonMainImplementation(libs.ktorClientCore)
+    commonMainImplementation(libs.mokoMvvmCore)
+    commonMainImplementation(libs.mokoMvvmLiveData)
+    commonMainImplementation(libs.mokoUtils)
+
+    commonTestImplementation(libs.kotlinTestJUnit)
+    commonTestImplementation(libs.ktorClientMock)
+    commonTestImplementation(libs.mokoMvvmTest)
+    commonTestImplementation(libs.mokoTestCore)
+    commonTestImplementation(libs.mokoTestRobolectric)
 }

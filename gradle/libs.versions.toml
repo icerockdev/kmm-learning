@@ -1,0 +1,27 @@
+[versions]
+# kotlin
+kotlinTestVersion = "1.5.20"
+# kotlinx
+coroutinesVersion = "1.5.1-native-mt"
+# ktor
+ktorClientVersion = "1.6.1"
+# moko
+mokoMvvmVersion = "0.11.0"
+mokoUtilsVersion = "0.2.0"
+mokoTestVersion = "0.4.1"
+
+[libraries]
+# kotlin
+kotlinTestJUnit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlinTestVersion" }
+# kotlinx
+coroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
+# ktor
+ktorClientCore = { module = "io.ktor:ktor-client-core", version.ref = "ktorClientVersion" }
+ktorClientMock = { module = "io.ktor:ktor-client-mock", version.ref = "ktorClientVersion" }
+# moko
+mokoMvvmCore = { module = "dev.icerock.moko:mvvm-core", version.ref = "mokoMvvmVersion" }
+mokoMvvmLiveData = { module = "dev.icerock.moko:mvvm-livedata", version.ref = "mokoMvvmVersion" }
+mokoMvvmTest = { module = "dev.icerock.moko:mvvm-test", version.ref = "mokoMvvmVersion" }
+mokoUtils = { module = "dev.icerock.moko:utils", version.ref = "mokoUtilsVersion" }
+mokoTestCore = { module = "dev.icerock.moko:test-core", version.ref = "mokoTestVersion" }
+mokoTestRobolectric = { module = "dev.icerock.moko:test-robolectric", version.ref = "mokoTestVersion" }
